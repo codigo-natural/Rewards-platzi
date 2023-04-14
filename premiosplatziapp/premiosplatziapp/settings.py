@@ -39,6 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.messages', # proporciona soporte para mensajes de error en la aplicación.
     'django.contrib.staticfiles', #  proporciona soporte para la gestión de archivos estáticos (CSS, JavaScript, imágenes) en la aplicación.
 ]
+THIRD_APPS = [
+    #'jazzmin',
+]
+
+LOCAL_APPS = [
+    'polls.apps.PollsConfig'
+]
+
+INSTALLED_APPS = THIRD_APPS + INSTALLED_APPS + LOCAL_APPS
 
 # Definición de middleware utilizado en la aplicación
 MIDDLEWARE = [
