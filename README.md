@@ -48,3 +48,23 @@ Estructura de carpetas de un proyecto con Django
 | question | int |
 | choice_text | varchar |
 | votes | int |
+
+**Comando para acceder a la consola interactiva de Django:** 
+> py manage.py shell
+```python      
+# Importacion de los modelos
+from polls.models import Question, Choice
+
+
+# Llamado de todos los registros de un modelo
+Question.objects.all()
+
+# funcion para crear objetos de tipo date_time(timezone)
+from django.utils import timezone
+
+# Creacion de un nuevo registro
+q = Question(question_text="¿Cual es el mejor curso de Platzi?", pub_date=timezone.now())
+
+# Guardado del nuevo registro
+q.save()
+```
