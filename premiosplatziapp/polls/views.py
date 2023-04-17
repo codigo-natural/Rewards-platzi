@@ -19,4 +19,4 @@ def results(request, question_id):
   return HttpResponse(f'Estas viendo los resultados de la pregunta número {question_id}')
 
 def vote(request, question_id):
-  return HttpResponse(f'Estas votando a la pregunda número {question_id} {question_id}')
+  return HttpResponse(f'Estas votando a la pregunda número {question_id}')
