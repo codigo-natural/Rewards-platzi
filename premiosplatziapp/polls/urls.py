@@ -1,6 +1,8 @@
 from django.urls import path
 
 from . import views
+
+app_name="polls"
 # Lista de rutas URL que el servidor Django puede manejar
 urlpatterns = [
     # Ruta para la página de inicio, con una vista llamada "index"
