@@ -24,8 +24,11 @@ def detail(request, question_id):
   })
 
 def results(request, question_id):
-  # Devolviendo una respuesta HTTP con un mensaje que indica el número de pregunta que se está visualizando
-  return HttpResponse(f'Estas viendo los resultados de la pregunta número {question_id}')
+  # Obteniendo la pregunta correspondiente al ID proporcionado o devolviendo un error 404 en caso de que no exista
+  question = get_object_or_404(Question, pk=question_id)
+  return render(request, 'polls/results.html', {
+    'question': question
+  })
 
 def vote(request, question_id):
   # Obteniendo la pregunta correspondiente al ID proporcionado o devolviendo un error 404 en caso de que no exista
@@ -44,5 +47,5 @@ def vote(request, question_id):
     selected_choice.votes += 1
     selected_choice.save()
     # Redireccionando al usuario a la página de resultados de la pregunta
-    return HttpResponseRedirect(reverse("poll:results", args=(question.id,)))
+    return HttpResponseRedirect(reverse("polls:results", args=(question.id,)))
   
